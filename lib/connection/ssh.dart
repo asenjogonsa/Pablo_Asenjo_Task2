@@ -81,7 +81,7 @@ class SSH {
  */
 
 
-  Future<SSHSession?> MadridLG(String place) async {
+  Future<SSHSession?> MadridLG() async {
     try {
       if (_client == null) {
         if (kDebugMode) {

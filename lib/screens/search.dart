@@ -71,12 +71,13 @@ class SearchScreenState extends State<SearchScreen> {
                                 child: Center(
                                     child: TextButton(
                                   child: Text(
-                                    'REBOOT LG',
+                                    'Reboot LG',
                                     style: TextStyle(color: Colors.white),
                                   ),
-                                  onPressed: () async {
-                                    await ssh.rebootLG();
-                                  },
+                                  onPressed: () => showAlertDialog(context, 1),
+                                 /* async {
+                                    await ssh.rebootLG();*/
+                                  //},
                                 )),
                               ),
                             ),
@@ -96,12 +97,13 @@ class SearchScreenState extends State<SearchScreen> {
                                   child: Expanded(
                                       child: TextButton(
                                     child: const Text(
-                                      'RELAUNCH LG',
+                                      'Relaunch LG',
                                       style: TextStyle(color: Colors.white),
                                     ),
-                                    onPressed: () async {
+                                    onPressed: () => showAlertDialog(context, 2),
+                                    /*async {
                                       await ssh.relaunchLG();
-                                    },
+                                    },*/
                                   )),
                                 ),
                               ),
@@ -155,7 +157,7 @@ class SearchScreenState extends State<SearchScreen> {
                                             onPressed: () async {
                                               SSH ssh = SSH();
                                               await ssh.connectToLG();
-                                              SSHSession? result = await ssh.MadridLG("madrid");
+                                              SSHSession? result = await ssh.MadridLG();
 
                                             },
                                           )),
@@ -177,7 +179,7 @@ class SearchScreenState extends State<SearchScreen> {
                                       child: Expanded(
                                           child: TextButton(
                                             child: const Text(
-                                              'Burbuja',
+                                              'Bubble',
                                               style: TextStyle(color: Colors.white),
                                             ),
                                             onPressed: () async {
@@ -195,4 +197,43 @@ class SearchScreenState extends State<SearchScreen> {
                           ])))
                 ]))));
   }
+}
+
+showAlertDialog(BuildContext context, int ind) {
+  SSH ssh = SSH();
+  Widget cancelButton = TextButton(
+    child: const Text("Cancel"),
+    onPressed: () {
+      Navigator.of(context).pop();
+    },
+  );
+  Widget continueButton = TextButton(
+    child: const Text("Continue"),
+    onPressed: () {
+      Navigator.of(context).pop();
+      if (ind == 1) {
+        ssh.rebootLG();
+      } else if (ind == 2) {
+        ssh.relaunchLG();
+      }
+    },
+  );
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: const Text("Confirmation"),
+    content: Text((ind == 1)
+        ? "Are you sure you want to relaunch LG?"
+        : "Are you sure you want to disconnect from LG?"),
+    actions: [
+      cancelButton,
+      continueButton,
+    ],
+  );
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }
