@@ -222,8 +222,8 @@ showAlertDialog(BuildContext context, int ind) {
   AlertDialog alert = AlertDialog(
     title: const Text("Confirmation"),
     content: Text((ind == 1)
-        ? "Are you sure you want to relaunch LG?"
-        : "Are you sure you want to disconnect from LG?"),
+        ? "Are you sure you want to reboot LG?"
+        : "Are you sure you want to relaunch LG?"),
     actions: [
       cancelButton,
       continueButton,
