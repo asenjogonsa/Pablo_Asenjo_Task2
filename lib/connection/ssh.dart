@@ -130,7 +130,7 @@ class SSH {
   <Document>
     <Placemark id="pablo_asenjo">
       <name>Pablo Asenjo</name>
-      <description>Spain</description>
+      <description>Madrid - Spain</description>
       <gx:balloonVisibility>1</gx:balloonVisibility>
       <ScreenOverlay>
         <name>Overlay</name>

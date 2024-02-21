@@ -3,7 +3,6 @@ import 'package:task2/components/connection_flag.dart';
 
 import 'package:task2/connection/ssh.dart';
 import 'package:task2/screens/connect.dart';
-import 'package:task2/screens/help_screen.dart';
 import 'package:task2/screens/search.dart';
 import 'package:task2/utils/constants.dart';
 
@@ -35,7 +34,7 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('Liquid Galaxy task 2 Controller',
+          title: Text('Liquid Galaxy Task 2',
               style: TextStyle(color: Colors.white60)),
           backgroundColor: Colors.black,
           actions: <Widget>[
