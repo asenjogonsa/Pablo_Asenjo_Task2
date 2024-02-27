@@ -6,23 +6,22 @@ class ConnectionFlag extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        color: Colors.black,
-        child: Row(
-          children: [
-            Icon(
-              Icons.flag,
-              color: connectionStatus ? Colors.green : Colors.red,
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Text(
-              connectionStatus ? 'Connected' : 'Disconnected',
-              style: TextStyle(
-                  color: connectionStatus ? Colors.green : Colors.red),
-            )
-          ],
-        ));
+    Color color = connectionStatus ? Colors.green : Colors.red;
+    String label = connectionStatus ? 'CONNECTED' : 'DISCONNECTED';
+    return Row(
+      children: [
+        Icon(
+          Icons.circle,
+          color: color,
+        ),
+        SizedBox(
+          width: 5.0,
+        ),
+        Text(
+          label,
+          style: TextStyle(color: color, fontWeight: FontWeight.w700),
+        )
+      ],
+    );
   }
 }

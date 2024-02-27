@@ -17,8 +17,8 @@ class SSH {
 
   Future<void> initConnection() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    _host = prefs.getString('ipAddress') ?? '192.168.201.3';
-    _port = prefs.getString('sshPort') ?? '22';
+    _host = prefs.getString('ipAddress') ?? '192.168.201.1';
+    _port = prefs.getString('sshPort') ?? '0';
     _username = prefs.getString('username') ?? 'lg';
     _passwordOrKey = prefs.getString('password') ?? '1234';
     _numberOfRigs = prefs.getString('numberOfRigs') ?? '3';
@@ -122,7 +122,7 @@ class SSH {
 
       final execResult =
       //await SSHClient.upload("hola.txt");
-      await _client!.execute('''cat > /var/www/html/prueba30.kml << EOF
+      await _client!.execute('''cat > /var/www/html/kml/slave_2.kml << EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2"
      xmlns:gx="http://www.google.com/kml/ext/2.2">
@@ -150,7 +150,7 @@ class SSH {
 
 
 
-      await _client!.execute('echo "\n$_url/prueba30.kml" >> /var/www/html/kmls.txt');
+      //await _client!.execute('echo "\n$_url/prueba30.kml" >> /var/www/html/kmls.txt');
           return execResult;
     } catch (e) {
       if (kDebugMode) {

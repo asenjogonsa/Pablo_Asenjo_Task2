@@ -32,13 +32,17 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    rebuildAllChildren(context);
     return Scaffold(
       appBar: AppBar(
           title: Text('Liquid Galaxy Task 2',
+
               style: TextStyle(color: Colors.white60)),
           backgroundColor: Colors.black,
-          actions: <Widget>[
-            ConnectionFlag(connectionStatus: connection),
+
+          actions: <Widget>[ConnectionFlag(connectionStatus: connection),
+
+
             PopupMenuButton(
               itemBuilder: (context) => [
                 PopupMenuItem(
@@ -59,5 +63,12 @@ class HomePageState extends State<HomePage> {
           ]),
       body: SearchScreen(),
     );
+  }
+  void rebuildAllChildren(BuildContext context) {
+    void rebuild(Element el) {
+      el.markNeedsBuild();
+      el.visitChildren(rebuild);
+    }
+    (context as Element).visitChildren(rebuild);
   }
 }
