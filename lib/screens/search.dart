@@ -61,7 +61,7 @@ class SearchScreenState extends State<SearchScreen> {
                                     height: 100,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15.0),
-                                      color: Color.fromARGB(70, 255, 255, 255),
+                                      color: Color.fromARGB(90, 0, 0, 0),
                                     ),
                                     child: Center(
                                         child: TextButton(
@@ -86,7 +86,7 @@ class SearchScreenState extends State<SearchScreen> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15.0),
                                       color:
-                                      const Color.fromARGB(70, 255, 255, 255),
+                                      const Color.fromARGB(90, 0, 0, 0),
 
                                     ),
                                     child: Center(
@@ -114,7 +114,7 @@ class SearchScreenState extends State<SearchScreen> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15.0),
                                       color:
-                                      const Color.fromARGB(70, 255, 255, 255),
+                                      const Color.fromARGB(90, 0, 0, 0),
                                     ),
                                     child: Center(
                                       child: Expanded(
@@ -143,7 +143,7 @@ class SearchScreenState extends State<SearchScreen> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15.0),
                                       color:
-                                      const Color.fromARGB(70, 255, 255, 255),
+                                      const Color.fromARGB(90, 0, 0, 0),
 
                                     ),
                                     child: Center(
@@ -186,7 +186,7 @@ class SearchScreenState extends State<SearchScreen> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15.0),
                                       color:
-                                      const Color.fromARGB(70, 255, 255, 255),
+                                      const Color.fromARGB(90, 0, 0, 0),
                                     ),
                                     child: Center(
                                       child: Expanded(
@@ -214,7 +214,7 @@ class SearchScreenState extends State<SearchScreen> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15.0),
                                       color:
-                                      const Color.fromARGB(70, 255, 255, 255),
+                                      const Color.fromARGB(90, 0, 0, 0),
                                     ),
                                     child: Center(
                                       child: Expanded(
@@ -242,7 +242,7 @@ class SearchScreenState extends State<SearchScreen> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15.0),
                                       color:
-                                      const Color.fromARGB(70, 255, 255, 255),
+                                      const Color.fromARGB(90, 0, 0, 0),
                                     ),
                                     child: Center(
                                       child: Expanded(
