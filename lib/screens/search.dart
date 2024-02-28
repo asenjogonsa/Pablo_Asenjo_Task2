@@ -221,7 +221,7 @@ class SearchScreenState extends State<SearchScreen> {
                                           child: TextButton(
                                             child: const Text(
                                               'Bubble Render',
-                                              style: TextStyle(color: Colors.white),
+                                              style: TextStyle(color: Colors.white, fontSize: 18),
                                             ),
                                             onPressed: () async {
                                               SSH ssh = SSH();
