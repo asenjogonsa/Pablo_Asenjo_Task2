@@ -55,87 +55,134 @@ class SearchScreenState extends State<SearchScreen> {
 
                       child: Expanded(
                           child: Row(
-                              // This next line does the trick.
+                            // This next line does the trick.
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: <Widget>[
-                            Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Container(
-                                padding: EdgeInsets.all(10),
-                                width: 200,
-                                height: 100,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15.0),
-                                    color: Color.fromARGB(50, 255, 3255, 255),
-                                ),
-                                child: Center(
-                                    child: TextButton(
-                                  child: Text(
-                                    'Reboot LG',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  onPressed: () => showAlertDialog(context, 1),
-                                 /* async {
+//**************************************************************************************************************** Begin row reboot button
+                                Padding(
+                                  padding: EdgeInsets.all(10),
+                                  child: Container(
+                                    padding: EdgeInsets.all(10),
+                                    width: 200,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15.0),
+                                      color: Color.fromARGB(50, 255, 3255, 255),
+                                    ),
+                                    child: Center(
+                                        child: TextButton(
+                                          child: Text(
+                                            'Reboot LG',
+                                            style: TextStyle(color: Colors.white),
+                                          ),
+                                          onPressed: () => showAlertDialog(context, 1,"Are you sure you want to Reboot LG?" ),
+                                          /* async {
                                     await ssh.rebootLG();*/
-                                  //},
-                                )),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Container(
-                                padding: EdgeInsets.all(10),
-                                width: 200,
-                                height: 100,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15.0),
-                                    color:
-                                        const Color.fromARGB(50, 255, 3255, 255),
+                                          //},
+                                        )),
+                                  ),
+                                ),
+//****************************************************************************************************************       relaunch button
+                                Padding(
+                                  padding: EdgeInsets.all(10),
+                                  child: Container(
+                                    padding: EdgeInsets.all(10),
+                                    width: 200,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15.0),
+                                      color:
+                                      const Color.fromARGB(50, 255, 3255, 255),
 
                                     ),
-                                child: Center(
-                                  child: Expanded(
-                                      child: TextButton(
-                                    child: const Text(
-                                      'Relaunch LG',
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                    onPressed: () => showAlertDialog(context, 2),
-                                    /*async {
+                                    child: Center(
+                                      child: Expanded(
+                                          child: TextButton(
+                                            child: const Text(
+                                              'Relaunch LG',
+                                              style: TextStyle(color: Colors.white),
+                                            ),
+                                            onPressed: () => showAlertDialog(context, 2, "Are you sure you want to relaunch LG?"),
+                                            /*async {
                                       await ssh.relaunchLG();
                                     },*/
-                                  )),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Container(
-                                padding: EdgeInsets.all(10),
-                                width: 200,
-                                height: 100,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15.0),
-                                    color:
-                                    const Color.fromARGB(50, 255, 3255, 255),
+                                          )),
                                     ),
-                                child: Center(
-                                  child: Expanded(
-                                      child: TextButton(
-                                        child: const Text(
-                                          'Pin Madrid',
-                                          style: TextStyle(color: Colors.white),
-                                        ),
-                                        onPressed: () async {
-                                          SSH ssh = SSH();
-                                          await ssh.connectToLG();
-                                          SSHSession? result = await ssh.searchplace("madrid");
-
-                                          },
-                                      )),
+                                  ),
                                 ),
-                              ),
-                            ),
+//****************************************************************************************************************  Clear KMLS
+                                Padding(
+                                  padding: EdgeInsets.all(10),
+                                  child: Container(
+                                    padding: EdgeInsets.all(10),
+                                    width: 200,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15.0),
+                                      color:
+                                      const Color.fromARGB(50, 255, 3255, 255),
+                                    ),
+                                    child: Center(
+                                      child: Expanded(
+                                          child: TextButton(
+                                            child: const Text(
+                                              'Clear All KML',
+                                              style: TextStyle(color: Colors.white),
+                                            ),
+                                            onPressed: () async {
+                                              SSH ssh = SSH();
+                                              await ssh.connectToLG();
+                                              SSHSession? result = await ssh.ClearKML();
+
+                                            },
+                                          )),
+                                    ),
+                                  ),
+                                ),
+//****************************************************************************************************************    pin madridbutton
+                                Padding(
+                                  padding: EdgeInsets.all(10),
+                                  child: Container(
+                                    padding: EdgeInsets.all(10),
+                                    width: 200,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15.0),
+                                      color:
+                                      const Color.fromARGB(50, 255, 3255, 255),
+
+                                    ),
+                                    child: Center(
+                                      child: Expanded(
+                                          child: TextButton(
+                                            child: const Text(
+                                              'Shutdown',
+                                              style: TextStyle(color: Colors.white),
+                                            ),
+                                            onPressed: () => showAlertDialog(context, 3, "Are you sure you want to Shutdown LG?"),
+                                            /*async {
+                                      await ssh.relaunchLG();
+                                    },*/
+                                          )),
+                                    ),
+                                  ),
+                                ),
+
+
+
+
+                              ]))),
+
+                  Container(
+                      width: double.infinity,
+                      height: 200,
+                      // color: Colors.grey,
+
+                      child: Expanded(
+                          child: Row(
+                            // This next line does the trick.
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
                                 Padding(
                                   padding: EdgeInsets.all(10),
                                   child: Container(
@@ -179,13 +226,41 @@ class SearchScreenState extends State<SearchScreen> {
                                       child: Expanded(
                                           child: TextButton(
                                             child: const Text(
-                                              'Bubble',
+                                              'Bubble Render',
                                               style: TextStyle(color: Colors.white),
                                             ),
                                             onPressed: () async {
                                               SSH ssh = SSH();
                                               await ssh.connectToLG();
-                                              SSHSession? result = await ssh.Burbuja();
+                                              SSHSession? result = await ssh.BurbujaRender();
+
+                                            },
+                                          )),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.all(10),
+                                  child: Container(
+                                    padding: EdgeInsets.all(10),
+                                    width: 200,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15.0),
+                                      color:
+                                      const Color.fromARGB(50, 255, 3255, 255),
+                                    ),
+                                    child: Center(
+                                      child: Expanded(
+                                          child: TextButton(
+                                            child: const Text(
+                                              'Bubble HTML',
+                                              style: TextStyle(color: Colors.white),
+                                            ),
+                                            onPressed: () async {
+                                              SSH ssh = SSH();
+                                              await ssh.connectToLG();
+                                              SSHSession? result = await ssh.BurbujaHTML();
 
                                             },
                                           )),
@@ -194,12 +269,16 @@ class SearchScreenState extends State<SearchScreen> {
                                 ),
 
 
-                          ])))
+
+
+                              ])))
+
+
                 ]))));
   }
 }
 
-showAlertDialog(BuildContext context, int ind) {
+showAlertDialog(BuildContext context, int ind, String text) {
   SSH ssh = SSH();
   Widget cancelButton = TextButton(
     child: const Text("Cancel"),
@@ -211,19 +290,28 @@ showAlertDialog(BuildContext context, int ind) {
     child: const Text("Continue"),
     onPressed: () {
       Navigator.of(context).pop();
+      String text;
       if (ind == 1) {
         ssh.rebootLG();
-      } else if (ind == 2) {
+
+      }
+      if (ind == 2) {
         ssh.relaunchLG();
+
+      }
+      if (ind == 3) {
+
+        ssh.shutdownLG();
+
       }
     },
   );
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
     title: const Text("Confirmation"),
-    content: Text((ind == 1)
-        ? "Are you sure you want to reboot LG?"
-        : "Are you sure you want to relaunch LG?"),
+
+    content: Text(("$text")),
+
     actions: [
       cancelButton,
       continueButton,

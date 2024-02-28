@@ -111,7 +111,7 @@ class SSH {
     }
   }
 
-  Future<SSHSession?> Burbuja() async {
+  Future<SSHSession?> BurbujaHTML() async {
     try {
       if (_client == null) {
         if (kDebugMode) {
@@ -146,9 +146,52 @@ class SSH {
   </Document>
 </kml>
 ''');
+      //await _client!.execute('echo "\n$_url/prueba30.kml" >> /var/www/html/kmls.txt');
+      return execResult;
+    } catch (e) {
+      if (kDebugMode) {
+        print('An error occurred while executing the command: $e');
+      }
+      return null;
+    }
+  }
 
 
+   Future<SSHSession?> BurbujaRender() async {
+        try {
+          if (_client == null) {
+            if (kDebugMode) {
+              print('SSH client is not initialized.');
+            }
+            return null;
+          }
 
+          final execResult =
+          //await SSHClient.upload("hola.txt");
+          await _client!.execute('''cat > /var/www/html/kml/slave_3.kml << EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+  <Document>
+    <name>Pablo</name>
+    <open>1</open>
+    <Folder>
+      <name>Logos</name>
+            <ScreenOverlay>
+        <name>LogoSO</name>
+        <Icon>
+          <href>https://i.imgur.com/3hiqA6C.jpeg</href>
+        </Icon>
+        <color>ffffffff</color>
+        <overlayXY x="0.0" y="1.0" xunits="fraction" yunits="fraction"/>
+        <screenXY x="0.02" y="0.95" xunits="fraction" yunits="fraction"/>
+        <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        <size x="500.0" y="330.0" xunits="pixels" yunits="pixels"/>
+      </ScreenOverlay>
+    
+    </Folder>
+  </Document>
+</kml>
+''');
 
       //await _client!.execute('echo "\n$_url/prueba30.kml" >> /var/www/html/kmls.txt');
           return execResult;
@@ -159,6 +202,47 @@ class SSH {
       return null;
     }
   }
+
+  Future<SSHSession?> ClearKML() async {
+    try {
+      if (_client == null) {
+        if (kDebugMode) {
+          print('SSH client is not initialized.');
+        }
+        return null;
+      }
+
+        final execResult =
+        //await SSHClient.upload("hola.txt");
+
+        await _client!.execute('''cat > /var/www/html/kml/slave_2.kml << EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+  <Document id="slave_2">
+  </Document>
+</kml>
+''');
+      await _client!.execute('''cat > /var/www/html/kml/slave_3.kml << EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+  <Document id="slave_3">
+  </Document>
+</kml>
+''');
+        //await _client!.execute('echo "\n$_url/prueba30.kml" >> /var/www/html/kmls.txt');
+        return execResult;
+
+
+    } catch (e) {
+      if (kDebugMode) {
+        print('An error occurred while executing the command: $e');
+      }
+      return null;
+    }
+
+  }
+
+
 
   Future<void> shutdownLG() async {
     try {
@@ -208,37 +292,6 @@ class SSH {
         await _client?.run(
             '"/home/${_username}/bin/lg-relaunch" > /home/${_username}/log.txt');
         await _client?.run(cmd);
-      }
-    } catch (e) {
-      print(e);
-    }
-  }
-
-
-
-
-
-
-
-  Future<void> refresh() async {
-    await connectToLG();
-    try {
-      const search = '<href>##LG_PHPIFACE##kml\\/slave_{{slave}}.kml<\\/href>';
-      const replace =
-          '<href>##LG_PHPIFACE##kml\\/slave_{{slave}}.kml<\\/href><refreshMode>onInterval<\\/refreshMode><refreshInterval>2<\\/refreshInterval>';
-      final command =
-          'echo ${_passwordOrKey} | sudo -S sed -i "s/$search/$replace/" ~/earth/kml/slave/myplaces.kml';
-
-      final clear =
-          'echo ${_passwordOrKey} | sudo -S sed -i "s/$replace/$search/" ~/earth/kml/slave/myplaces.kml';
-      await connectToLG();
-      for (var i = 2; i <= int.parse(_numberOfRigs); i++) {
-        final clearCmd = clear.replaceAll('{{slave}}', i.toString());
-        final cmd = command.replaceAll('{{slave}}', i.toString());
-        String query = 'sshpass -p $_passwordOrKey} ssh -t lg$i \'{{cmd}}\'';
-
-        await _client?.execute(query.replaceAll('{{cmd}}', clearCmd));
-        await _client?.execute(query.replaceAll('{{cmd}}', cmd));
       }
     } catch (e) {
       print(e);
