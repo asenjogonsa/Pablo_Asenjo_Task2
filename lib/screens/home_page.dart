@@ -46,7 +46,8 @@ class HomePageState extends State<HomePage> {
             PopupMenuButton(
               itemBuilder: (context) => [
                 PopupMenuItem(
-                  child: Text('Connect'),
+                  child: Text('Connect',
+                  style: TextStyle(color: Colors.black, fontSize: 22)),
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(

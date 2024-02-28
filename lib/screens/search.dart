@@ -18,7 +18,7 @@ class SearchScreenState extends State<SearchScreen> {
         body: DecoratedBox(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("assets/images/space.png"),
+                  image: AssetImage("assets/images/outerspace.gif"),
                   fit: BoxFit.cover),
             ),
             child: Padding(
@@ -30,21 +30,15 @@ class SearchScreenState extends State<SearchScreen> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15.0),
                               color: Colors.black),
-                          height: 50,
-                          width: 180,
-                          child: Row(
-                            children: [
+                          height: 70,
+                          width: 250,
+                        child: Center(
 
-                              const SizedBox(
-                                width: 8,
-
+                              child: Text(
+                                'Pablo Asenjo - Spain',
+                                style: TextStyle(color: Colors.white, fontSize: 22),
                               ),
-                              Text(
-                                  'Pablo Asenjo - Spain',
-                                  style: TextStyle(color: Colors.white )
-                              )
-                            ],
-                          ))),
+                            )),),
                   SizedBox(
                     height: 40,
                   ),
@@ -67,13 +61,13 @@ class SearchScreenState extends State<SearchScreen> {
                                     height: 100,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15.0),
-                                      color: Color.fromARGB(50, 255, 3255, 255),
+                                      color: Color.fromARGB(70, 255, 255, 255),
                                     ),
                                     child: Center(
                                         child: TextButton(
                                           child: Text(
                                             'Reboot LG',
-                                            style: TextStyle(color: Colors.white),
+                                            style: TextStyle(color: Colors.white, fontSize: 18),
                                           ),
                                           onPressed: () => showAlertDialog(context, 1,"Are you sure you want to Reboot LG?" ),
                                           /* async {
@@ -92,7 +86,7 @@ class SearchScreenState extends State<SearchScreen> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15.0),
                                       color:
-                                      const Color.fromARGB(50, 255, 3255, 255),
+                                      const Color.fromARGB(70, 255, 255, 255),
 
                                     ),
                                     child: Center(
@@ -100,7 +94,7 @@ class SearchScreenState extends State<SearchScreen> {
                                           child: TextButton(
                                             child: const Text(
                                               'Relaunch LG',
-                                              style: TextStyle(color: Colors.white),
+                                              style: TextStyle(color: Colors.white, fontSize: 18),
                                             ),
                                             onPressed: () => showAlertDialog(context, 2, "Are you sure you want to relaunch LG?"),
                                             /*async {
@@ -120,14 +114,14 @@ class SearchScreenState extends State<SearchScreen> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15.0),
                                       color:
-                                      const Color.fromARGB(50, 255, 3255, 255),
+                                      const Color.fromARGB(70, 255, 255, 255),
                                     ),
                                     child: Center(
                                       child: Expanded(
                                           child: TextButton(
                                             child: const Text(
                                               'Clear All KML',
-                                              style: TextStyle(color: Colors.white),
+                                              style: TextStyle(color: Colors.white, fontSize: 18),
                                             ),
                                             onPressed: () async {
                                               SSH ssh = SSH();
@@ -149,7 +143,7 @@ class SearchScreenState extends State<SearchScreen> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15.0),
                                       color:
-                                      const Color.fromARGB(50, 255, 3255, 255),
+                                      const Color.fromARGB(70, 255, 255, 255),
 
                                     ),
                                     child: Center(
@@ -157,7 +151,7 @@ class SearchScreenState extends State<SearchScreen> {
                                           child: TextButton(
                                             child: const Text(
                                               'Shutdown',
-                                              style: TextStyle(color: Colors.white),
+                                              style: TextStyle(color: Colors.white, fontSize: 18),
                                             ),
                                             onPressed: () => showAlertDialog(context, 3, "Are you sure you want to Shutdown LG?"),
                                             /*async {
@@ -192,14 +186,14 @@ class SearchScreenState extends State<SearchScreen> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15.0),
                                       color:
-                                      const Color.fromARGB(50, 255, 3255, 255),
+                                      const Color.fromARGB(70, 255, 255, 255),
                                     ),
                                     child: Center(
                                       child: Expanded(
                                           child: TextButton(
                                             child: const Text(
                                               'Orbit to Madrid',
-                                              style: TextStyle(color: Colors.white),
+                                              style: TextStyle(color: Colors.white, fontSize: 18),
                                             ),
                                             onPressed: () async {
                                               SSH ssh = SSH();
@@ -220,7 +214,7 @@ class SearchScreenState extends State<SearchScreen> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15.0),
                                       color:
-                                      const Color.fromARGB(50, 255, 3255, 255),
+                                      const Color.fromARGB(70, 255, 255, 255),
                                     ),
                                     child: Center(
                                       child: Expanded(
@@ -248,14 +242,14 @@ class SearchScreenState extends State<SearchScreen> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15.0),
                                       color:
-                                      const Color.fromARGB(50, 255, 3255, 255),
+                                      const Color.fromARGB(70, 255, 255, 255),
                                     ),
                                     child: Center(
                                       child: Expanded(
                                           child: TextButton(
                                             child: const Text(
                                               'Bubble HTML',
-                                              style: TextStyle(color: Colors.white),
+                                              style: TextStyle(color: Colors.white, fontSize: 18),
                                             ),
                                             onPressed: () async {
                                               SSH ssh = SSH();
