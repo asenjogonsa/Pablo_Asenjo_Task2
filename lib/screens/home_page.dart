@@ -7,6 +7,7 @@ import 'package:task2/screens/search.dart';
 import 'package:task2/utils/constants.dart';
 
 class HomePage extends StatefulWidget {
+  // ignore: prefer_const_constructors_in_immutables
   HomePage({Key? key}) : super(key: key);
 
   @override
@@ -35,7 +36,7 @@ class HomePageState extends State<HomePage> {
     rebuildAllChildren(context);
     return Scaffold(
       appBar: AppBar(
-          title: Text('Liquid Galaxy Task 2',
+          title: const Text('Liquid Galaxy Task 2',
 
               style: TextStyle(color: Colors.white60)),
           backgroundColor: Colors.black,
@@ -46,12 +47,12 @@ class HomePageState extends State<HomePage> {
             PopupMenuButton(
               itemBuilder: (context) => [
                 PopupMenuItem(
-                  child: Text('Connect',
+                  child: const Text('Connect',
                   style: TextStyle(color: Colors.black, fontSize: 22)),
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => ConnectScreen(),
+                        builder: (context) => const ConnectScreen(),
                       ),
                     );
                     setState(() {
@@ -62,7 +63,7 @@ class HomePageState extends State<HomePage> {
               ],
             ),
           ]),
-      body: SearchScreen(),
+      body: const SearchScreen(),
     );
   }
   void rebuildAllChildren(BuildContext context) {
