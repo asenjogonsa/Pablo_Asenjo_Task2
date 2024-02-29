@@ -32,40 +32,40 @@ class SearchScreenState extends State<SearchScreen> {
                               color: Colors.black),
                           height: 70,
                           width: 250,
-                        child: Center(
+                        child: const Center(
 
                               child: Text(
                                 'Pablo Asenjo - Spain',
                                 style: TextStyle(color: Colors.white, fontSize: 22),
                               ),
                             )),),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
-                  Container(
+                  SizedBox(
                       width: double.infinity,
                       height: 200,
                       // color: Colors.grey,
 
-                      child: Expanded(
+                      child: Center(
                           child: Row(
                             // This next line does the trick.
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: <Widget>[
-//**************************************************************************************************************** Begin row reboot button
+// **************************************************************************************************************** Begin row reboot button
                                 Padding(
-                                  padding: EdgeInsets.all(10),
+                                  padding: const EdgeInsets.all(10),
                                   child: Container(
-                                    padding: EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(10),
                                     width: 200,
                                     height: 100,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15.0),
-                                      color: Color.fromARGB(90, 0, 0, 0),
+                                      color: const Color.fromARGB(90, 0, 0, 0),
                                     ),
                                     child: Center(
                                         child: TextButton(
-                                          child: Text(
+                                          child: const Text(
                                             'Reboot LG',
                                             style: TextStyle(color: Colors.white, fontSize: 18),
                                           ),
@@ -76,11 +76,11 @@ class SearchScreenState extends State<SearchScreen> {
                                         )),
                                   ),
                                 ),
-//****************************************************************************************************************       relaunch button
+// ****************************************************************************************************************       relaunch button
                                 Padding(
-                                  padding: EdgeInsets.all(10),
+                                  padding: const EdgeInsets.all(10),
                                   child: Container(
-                                    padding: EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(10),
                                     width: 200,
                                     height: 100,
                                     decoration: BoxDecoration(
@@ -90,7 +90,7 @@ class SearchScreenState extends State<SearchScreen> {
 
                                     ),
                                     child: Center(
-                                      child: Expanded(
+                                      child: Center(
                                           child: TextButton(
                                             child: const Text(
                                               'Relaunch LG',
@@ -104,11 +104,11 @@ class SearchScreenState extends State<SearchScreen> {
                                     ),
                                   ),
                                 ),
-//****************************************************************************************************************  Clear KMLS
+// ****************************************************************************************************************  Clear KMLS
                                 Padding(
-                                  padding: EdgeInsets.all(10),
+                                  padding: const EdgeInsets.all(10),
                                   child: Container(
-                                    padding: EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(10),
                                     width: 200,
                                     height: 100,
                                     decoration: BoxDecoration(
@@ -117,7 +117,7 @@ class SearchScreenState extends State<SearchScreen> {
                                       const Color.fromARGB(90, 0, 0, 0),
                                     ),
                                     child: Center(
-                                      child: Expanded(
+                                      child: Center(
                                           child: TextButton(
                                             child: const Text(
                                               'Clear All KML',
@@ -133,11 +133,11 @@ class SearchScreenState extends State<SearchScreen> {
                                     ),
                                   ),
                                 ),
-//****************************************************************************************************************    pin madridbutton
+// ****************************************************************************************************************   Shutdown
                                 Padding(
-                                  padding: EdgeInsets.all(10),
+                                  padding: const EdgeInsets.all(10),
                                   child: Container(
-                                    padding: EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(10),
                                     width: 200,
                                     height: 100,
                                     decoration: BoxDecoration(
@@ -147,7 +147,7 @@ class SearchScreenState extends State<SearchScreen> {
 
                                     ),
                                     child: Center(
-                                      child: Expanded(
+                                      child: Center(
                                           child: TextButton(
                                             child: const Text(
                                               'Shutdown',
@@ -167,20 +167,20 @@ class SearchScreenState extends State<SearchScreen> {
 
                               ]))),
 
-                  Container(
+                  SizedBox(
                       width: double.infinity,
                       height: 200,
                       // color: Colors.grey,
 
-                      child: Expanded(
+                      child: Center(
                           child: Row(
                             // This next line does the trick.
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: <Widget>[
                                 Padding(
-                                  padding: EdgeInsets.all(10),
+                                  padding: const EdgeInsets.all(10),
                                   child: Container(
-                                    padding: EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(10),
                                     width: 200,
                                     height: 100,
                                     decoration: BoxDecoration(
@@ -189,7 +189,7 @@ class SearchScreenState extends State<SearchScreen> {
                                       const Color.fromARGB(90, 0, 0, 0),
                                     ),
                                     child: Center(
-                                      child: Expanded(
+                                      child: Center(
                                           child: TextButton(
                                             child: const Text(
                                               'Orbit to Madrid',
@@ -206,9 +206,9 @@ class SearchScreenState extends State<SearchScreen> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.all(10),
+                                  padding: const EdgeInsets.all(10),
                                   child: Container(
-                                    padding: EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(10),
                                     width: 200,
                                     height: 100,
                                     decoration: BoxDecoration(
@@ -217,7 +217,7 @@ class SearchScreenState extends State<SearchScreen> {
                                       const Color.fromARGB(90, 0, 0, 0),
                                     ),
                                     child: Center(
-                                      child: Expanded(
+                                      child: Center(
                                           child: TextButton(
                                             child: const Text(
                                               'Bubble Render',
@@ -234,9 +234,9 @@ class SearchScreenState extends State<SearchScreen> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.all(10),
+                                  padding: const EdgeInsets.all(10),
                                   child: Container(
-                                    padding: EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(10),
                                     width: 200,
                                     height: 100,
                                     decoration: BoxDecoration(
@@ -245,7 +245,7 @@ class SearchScreenState extends State<SearchScreen> {
                                       const Color.fromARGB(90, 0, 0, 0),
                                     ),
                                     child: Center(
-                                      child: Expanded(
+                                      child: Center(
                                           child: TextButton(
                                             child: const Text(
                                               'Bubble HTML',
@@ -304,7 +304,7 @@ showAlertDialog(BuildContext context, int ind, String text) {
   AlertDialog alert = AlertDialog(
     title: const Text("Confirmation"),
 
-    content: Text(("$text")),
+    content: Text((text)),
 
     actions: [
       cancelButton,
