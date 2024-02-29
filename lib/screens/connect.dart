@@ -37,7 +37,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
   final TextEditingController portController = TextEditingController();
   final TextEditingController no_of_rigs_Controller = TextEditingController();
 
-  Future<void> saveSettings() async {
+  Future<void> saveSettings() async { //fields of conection settings
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 
     if (ipController.text.isNotEmpty) {

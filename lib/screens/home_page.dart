@@ -33,26 +33,26 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    rebuildAllChildren(context);
+    rebuildAllChildren(context); //to refresh connection status flag more often
     return Scaffold(
       appBar: AppBar(
-          title: const Text('Liquid Galaxy Task 2',
+          title: const Text('Liquid Galaxy Task 2', //Bar on top text at the left
 
               style: TextStyle(color: Colors.white60)),
           backgroundColor: Colors.black,
 
-          actions: <Widget>[ConnectionFlag(connectionStatus: connection),
+          actions: <Widget>[ConnectionFlag(connectionStatus: connection), // the Flag (green or red) for connection status
 
 
-            PopupMenuButton(
+            PopupMenuButton( //menu popup to connect three dots at the bar right
               itemBuilder: (context) => [
                 PopupMenuItem(
-                  child: const Text('Connect',
+                  child: const Text('Connect',   //connection button
                   style: TextStyle(color: Colors.black, fontSize: 22)),
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => const ConnectScreen(),
+                        builder: (context) => const ConnectScreen(), //Render the Connect screen
                       ),
                     );
                     setState(() {
@@ -66,7 +66,8 @@ class HomePageState extends State<HomePage> {
       body: const SearchScreen(),
     );
   }
-  void rebuildAllChildren(BuildContext context) {
+
+  void rebuildAllChildren(BuildContext context) { //refresher for connection status flag
     void rebuild(Element el) {
       el.markNeedsBuild();
       el.visitChildren(rebuild);
